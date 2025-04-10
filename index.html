@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>תרגול חשבון</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>תרגול פעולות חשבון</h1>
+
+  <form id="settings-form">
+    <label>מספר מינימלי: <input type="number" id="min" value="1"></label><br>
+    <label>מספר מקסימלי: <input type="number" id="max" value="10"></label><br>
+    <label>כמות תרגילים: <input type="number" id="num" value="5"></label><br>
+    <label>הגבלת זמן (בשניות לכל שאלה): <input type="number" id="time" value="10"></label><br>
+    
+    <p>בחר פעולות:</p>
+    <label><input type="checkbox" name="op" value="+"> חיבור</label>
+    <label><input type="checkbox" name="op" value="-"> חיסור</label>
+    <label><input type="checkbox" name="op" value="*"> כפל</label>
+    <label><input type="checkbox" name="op" value="/"> חילוק</label><br><br>
+
+    <button type="submit">התחל תרגול</button>
+  </form>
+
+  <div id="quiz-area" style="display: none;">
+    <p id="question"></p>
+    <input type="number" id="answer">
+    <button onclick="submitAnswer()">שלח תשובה</button>
+    <p id="timer"></p>
+    <p id="feedback"></p>
+  </div>
+
+  <div id="result" style="display: none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
