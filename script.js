@@ -67,8 +67,10 @@ function showQuestion() {
     document.getElementById("feedback").innerText = "";
     document.getElementById("answer").value = "";
     
-    // וידוא שהתצוגה תישאר בסדר הנכון גם אם היישור הוא RTL
-    document.getElementById("question").innerHTML = `<span style="direction: ltr; unicode-bidi: bidi-override;">${questions[current].text}</span>`;
+    // הצגת מספר השאלה יחד עם התרגיל
+    document.getElementById("question").innerHTML = 
+        `<span style="direction: ltr; unicode-bidi: bidi-override;">${questions[current].text}</span> 
+        <br> <small>(${current + 1}/${questions.length})</small>`;
 
     setTimeout(() => {
         document.getElementById("answer").focus();
@@ -128,7 +130,7 @@ function finishQuiz() {
 
     const exitBtn = document.createElement("button");
     exitBtn.innerText = "סיום";
-    exitBtn.style.marginRight = "10px";
+    exitBtn.style.marginRight = "50px";
     exitBtn.onclick = () => {
         document.getElementById("result").innerText = "תודה ולהתראות!";
         againBtn.remove();
